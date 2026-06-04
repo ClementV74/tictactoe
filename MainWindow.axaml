@@ -6,31 +6,15 @@
         x:Class="Tictactoe.MainWindow"
         Title="Tictactoe">
    
-    <Viewbox>
-    <Grid x:Name="Game">
-         
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+        <Grid>
+                <Grid.Background>
+                        <ImageBrush Source="avares://Tictactoe/Assets/bg.png"
+                                    Stretch="UniformToFill"/>
+                </Grid.Background>
+               
+                <Button Content="Start" HorizontalAlignment="Center" Click="Btn_Start" FontSize="50" Foreground="AliceBlue" Background="Transparent"></Button>
+        </Grid>
+ 
     
-       <Button Content="Test" Grid.Row="0" Grid.Column="0" Click="BTN_Click"></Button>
-       <Button Content="Test" Grid.Row="0" Grid.Column="1" Click="BTN_Click"></Button>
-       <Button Content="Test" Grid.Row="0" Grid.Column="2" Click="BTN_Click"></Button>
-       <Button Content="Test" Grid.Row="1" Grid.Column="0" Click="BTN_Click"></Button>
-       <Button Content="Test" Grid.Row="1" Grid.Column="1" Click="BTN_Click"></Button>
-        <Button Content="Test" Grid.Row="1" Grid.Column="2" Click="BTN_Click"></Button>
-        <Button Content="Test" Grid.Row="2" Grid.Column="0" Click="BTN_Click"></Button>
-        <Button Content="Test" Grid.Row="2" Grid.Column="1" Click="BTN_Click"></Button>
-        <Button Content="Test" Grid.Row="2" Grid.Column="2" Click="BTN_Click"></Button>
-       
-   </Grid>
-    </Viewbox>
 </Window>
