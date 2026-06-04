@@ -1,5 +1,6 @@
 using System;
 using System.Threading;
+using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 
@@ -9,6 +10,7 @@ namespace Tictactoe;
 
 public static class Win
 {
+    public static string WhoWin { get; set; } = "";
 
     public static bool IsWin(int[,] g)
     {
@@ -122,7 +124,7 @@ public partial class Game : UserControl
     }
 
 
-    private void BTN_Click(object? sender, RoutedEventArgs e)
+    private async void BTN_Click(object? sender, RoutedEventArgs e)
     {
         LockSize();
         var btn = sender as Button;
@@ -138,18 +140,22 @@ public partial class Game : UserControl
         {
             btn.Content = "O";
             Matrice[row, col] = 0;
+            Win.WhoWin = "O";
         }
         else
         {
             btn.Content = "X";
             Matrice[row, col] = 1;
+            Win.WhoWin = "X";
         }
 
         p.tour = !p.tour;
 
         if (Win.IsWin(Matrice))
         {
-            Console.WriteLine("WIN !");
+            await Task.Delay(800);
+            Content = new EndGame();
+            
         }
     }
 }
