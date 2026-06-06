@@ -1,0 +1,11 @@
+<Solution>
+  <Project Path="TicTacToe.Android/TicTacToe.Android.csproj">
+    <Deploy />
+  </Project>
+  <Project Path="TicTacToe.Browser/TicTacToe.Browser.csproj" />
+  <Project Path="TicTacToe.Desktop/TicTacToe.Desktop.csproj" />
+  <Project Path="TicTacToe.iOS/TicTacToe.iOS.csproj">
+    <Deploy />
+  </Project>
+  <Project Path="TicTacToe/TicTacToe.csproj" />
+</Solution>

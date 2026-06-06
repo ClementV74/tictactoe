@@ -1,0 +1,20 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="TicTacToe.Views.MainView">
+
+	<Grid>
+		<Grid.Background>
+			<ImageBrush Source="avares://TicTacToe/Assets/bg.png"
+                        Stretch="UniformToFill"/>
+		</Grid.Background>
+
+		<Button Content="Start"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="50"
+                Background="Transparent"
+                Foreground="AliceBlue"
+				Click="Btn_Start"/>
+	</Grid>
+
+</UserControl>
