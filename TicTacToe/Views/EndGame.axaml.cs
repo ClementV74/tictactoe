@@ -1,23 +1,31 @@
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
 
-namespace TicTacToe;
+namespace TicTacToe.Views;
 
 public partial class EndGame : UserControl
 {
+    private int nb_;
 
-
-    public EndGame()
+    public EndGame(int nb = 0)
     {
+        nb_ = nb;
         InitializeComponent();
         ShowWinner();
+
     }
     public void ShowWinner()
     {
-        Winner.Text = $"{Win.WhoWin} a gagné !";
+        if (nb_ == 2)
+        {
+            Winner.Text = "Match nul !";
+        }
+        else
+        {
 
+            Winner.Text = $"{Win.WhoWin} a gagné !";
+
+        }
     }
     private void BtnNewGameClick(object? sender, RoutedEventArgs e)
     {

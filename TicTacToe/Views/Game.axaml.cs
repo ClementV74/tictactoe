@@ -1,11 +1,10 @@
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
-using System.Numerics;
 using System.Threading.Tasks;
+using TicTacToe.Views;
 
 namespace TicTacToe;
+
 
 public static class Win
 {
@@ -53,7 +52,27 @@ public static class Win
 
         return false;
     }
+
+
+    public static bool IsDraw(int[,] g)
+    {
+        if (IsWin(g))
+            return false;
+
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                if (g[i, j] == 2)
+                    return false;
+            }
+        }
+
+        return true;
+    }
 }
+
+
 public class Player
 {
     private bool _toor;
@@ -71,6 +90,7 @@ public class Player
         this.tour = tour;
     }
 }
+
 
 public partial class Game : UserControl
 {
@@ -155,7 +175,11 @@ public partial class Game : UserControl
             Content = new EndGame();
 
         }
+        else if (Win.IsDraw(Matrice))
+        {
+            await Task.Delay(800);
+
+            Content = new EndGame(2);
+        }
     }
 }
-
-
